@@ -35,6 +35,7 @@ Stay organized, manage your daily tasks, track your progress, and personalize yo
 - **Local Storage:** Automatically saves your tasks and preferences using the browser's Local Storage. Your data stays available even after closing or refreshing the page.
 - **Smooth Animations:** Subtle fade animations for menus, modals, and other UI elements.
 - **Modern UI:** A clean and visually appealing interface designed for a smooth user experience.
+- **Animated Loading Screen:** Displays a smooth looping loading animation while the application initializes, revealing the main interface once everything is fully loaded.
 
 ## 🛠️ Built With
 
@@ -62,7 +63,7 @@ This means:
 
 No additional dependencies or installation are required.
 
-- Open https://...
+- Open https://amiralimodaresi.github.io/Todo-List-App/
 
 - Or clone the repository and run index.html
 
