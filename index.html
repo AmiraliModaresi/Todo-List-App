@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font awsome: -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <title>Todo list</title>
+</head>
+
+<body>
+    <!-- Pre loader -->
+    <div class="preload">
+        <span class="preload-loader"></span>
+    </div>
+
+    <!-- options menu icon -->
+    <nav class="header">
+        <div class="header-btn" id="header-theme">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <!-- options window: -->
+    <div class="theme-window">
+
+        <div class="theme-window-xmark"><i class="fa-solid fa-xmark"></i></div>
+
+        <div class="theme-window-title">
+            <p>theme:</p>
+        </div>
+
+        <div class="theme-window-btn" id="default-theme">
+            <p class="theme-window-btn-text" id="default">Default</p>
+            <div class="theme-window-btn-preview"></div>
+        </div>
+        <div class="theme-window-btn" id="warmAutumn-theme">
+            <p class="theme-window-btn-text" id="warmAutumn">Warm autumn</p>
+            <div class="theme-window-btn-preview"></div>
+        </div>
+        <div class="theme-window-btn" id="deepSea-theme">
+            <p class="theme-window-btn-text" id="deepSea">Deap sea</p>
+            <div class="theme-window-btn-preview"></div>
+        </div>
+        <div class="theme-window-btn" id="retroHack-theme">
+            <p class="theme-window-btn-text" id="retroHack">Retro hack</p>
+            <div class="theme-window-btn-preview"></div>
+        </div>
+
+        <div class="theme-window-title"></div>
+
+        <div class="theme-window-switch">
+            <p>Special fonts</p>
+
+            <div class="theme-window-toggle" id="special-fonts-toggle">
+                <input type="checkbox" />
+                <label></label>
+            </div>
+        </div>
+        <div class="theme-window-switch">
+            <p>Right to left</p>
+
+            <div class="theme-window-toggle" id="rtl-toggle">
+                <input type="checkbox" />
+                <label></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- main section -->
+    <div class="container">
+        <h1 class="title">Todo List</h1>
+
+        <div class="task-box">
+            <div class="progress-bar-sticky-parent">
+                <div class="progress-bar">
+                    <p class="progress-bar-percent">0%</p>
+                    <div class="progress-bar-inner"></div>
+                </div>
+            </div>
+
+            <div class="no-tasks-yet">
+                <div>There's nothing TODO!</div>
+                <p>Add a task</p>
+                <i class="fa-solid fa-arrow-down-long"></i>
+            </div>
+
+            <div class="tasks-container">
+
+                <!-- tasks go here -->
+
+                <!-- <div class="task">
+                    <input type="checkbox" class="task-check">
+                    <p class="task-text">test</p>
+                </div> -->
+
+            </div>
+
+            <div class="add-btn">
+                <p>+</p>
+            </div>
+        </div>
+
+        <!-- adding section -->
+        <form action="" class="add-section">
+            <input type="text" id="add-input" class="add-section-input" placeholder="Add a task ...">
+            <input type="submit" class="add-section-btn" value="Add">
+        </form>
+
+        <!-- edit task modal: -->
+        <form class="edit-task">
+            <input type="text" id="edit-task-input" class="edit-task-input" placeholder="edit task">
+            <input type="submit" class="edit-task-btn" value="Edit">
+        </form>
+    </div>
+
+    <!-- context menu: -->
+    <div class="context">
+        <div class="context-btn" id="context-del">
+            <i class="fa-solid fa-trash-can"></i>
+            <span class="context-btn-text">Delete task</span>
+        </div>
+        <div class="context-btn" id="context-edit">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <span class="context-btn-text">Edit task</span>
+        </div>
+        <div class="context-btn" id="context-add">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span class="context-btn-text">Add task</span>
+        </div>
+        <div class="context-btn" id="context-del-all">
+            <i class="fa-solid fa-dumpster"></i>
+            <span class="context-btn-text">Delete all tasks</span>
+        </div>
+        <div class="context-btn" id="context-theme">
+            <i class="fa-solid fa-gear"></i>
+            <span class="context-btn-text">Options</span>
+        </div>
+    </div>
+
+    <!-- "delete all" modal: -->
+    <div class="modal-blured-parent" id="delete-all-modal">
+        <div class="del-modal">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <p class="del-modal-text">Are you sure you want to delete all tasks?</p>
+            <p class="del-modal-text">This action cannot be undone.</p>
+            <div class="del-modal-btns">
+                <button class="del-modal-confirm">Delete all</button>
+                <button class="del-modal-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
