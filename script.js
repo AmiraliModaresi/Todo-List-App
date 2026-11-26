@@ -75,6 +75,8 @@ if (isFontON) {
 if (isRtlOn) {
     themeMenuRtlToggle.firstElementChild.checked = true;
     tasksParentElem.style.direction = 'rtl';
+    editTaskMenu.firstElementChild.style.direction = 'rtl';
+    addSectionElem.firstElementChild.style.direction = 'rtl';
 } else {
     themeMenuRtlToggle.firstElementChild.checked = false;
 }
@@ -170,9 +172,24 @@ document.addEventListener('contextmenu', (event) => {
     contextMenuEdit.style.display =
         rightClickedTask ? 'block' : 'none';
 
-    contextMenu.style.top = `${event.clientY}px`;
-    contextMenu.style.left = `${event.clientX}px`;
     contextMenu.style.display = 'block';
+
+    const winWidth = window.innerWidth;
+    const winHeight = window.innerHeight;
+    const menuWidth = contextMenu.offsetWidth;
+    const menuHeight = contextMenu.offsetHeight;
+    let x = event.clientX
+    let y = event.clientY
+
+    if (winWidth - x < menuWidth) {
+        x = winWidth - menuWidth;
+    }
+    if (winHeight - y < menuHeight) {
+        y = winHeight - menuHeight;
+    }
+
+    contextMenu.style.top = `${y}px`;
+    contextMenu.style.left = `${x}px`;
 });
 
 document.addEventListener('click', () => {
@@ -277,6 +294,8 @@ themeMenuRtlToggle.addEventListener('click', () => {
     isRtlOn = themeMenuRtlToggle.firstElementChild.checked;
 
     tasksParentElem.style.direction = isRtlOn ? 'rtl' : 'ltr';
+    editTaskMenu.firstElementChild.style.direction = isRtlOn ? 'rtl' : 'ltr';
+    addSectionElem.firstElementChild.style.direction = isRtlOn ? 'rtl' : 'ltr';
 
     saveUserData();
 })
@@ -303,6 +322,7 @@ function createTaskElement(text, isDone = false) {
 function applyFonts(isEnabled) {
     tasksParentElem.classList.toggle("special-font", isEnabled);
     addSectionElem.firstElementChild.classList.toggle("special-font", isEnabled);
+    editTaskMenu.firstElementChild.classList.toggle("special-font", isEnabled);
 }
 
 function updateThisList() {
